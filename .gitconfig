@@ -1,0 +1,16 @@
+[user]
+	name = joeyj364
+	email = joeyjnrgold@gmail.com
+[core]
+	autocrlf = false
+	safecrlf = true
+[alias]
+	co = checkout
+	ci = commit 
+	nci = commit -a --allow-empty-message -m ''
+	st = status
+	br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t 
+	dump = cat-file -p
+
