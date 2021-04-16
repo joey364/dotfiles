@@ -1,0 +1,51 @@
+{
+  "projectName": "vs-code-prettier-eslint",
+  "projectOwner": "idahogurl",
+  "repoType": "gitlab",
+  "repoHost": "https://gitlab.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "idahogurl",
+      "name": "Rebecca Vest",
+      "avatar_url": "https://secure.gravatar.com/avatar/787139c4c697cfc33cc422566a4ccf78?s=80&d=identicon",
+      "profile": "https://gitlab.com/idahogurl",
+      "contributions": [
+        "question",
+        "code",
+        "doc",
+        "infra",
+        "bug",
+        "ideas",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "quentez",
+      "name": "Quentin Calvez",
+      "avatar_url": "https://secure.gravatar.com/avatar/35c83f3e614ef0fe8ec1234568c88744?s=80&d=identicon",
+      "profile": "https://gitlab.com/quentez",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "basaran",
+      "name": "basaran",
+      "avatar_url": "https://secure.gravatar.com/avatar/7e549d0714b87693162f9ea96d2b8b21?s=80&d=identicon",
+      "profile": "https://gitlab.com/basaran",
+      "contributions": [
+        "question",
+        "code",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

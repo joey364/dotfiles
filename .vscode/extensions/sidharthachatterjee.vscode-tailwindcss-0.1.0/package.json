@@ -1,0 +1,50 @@
+{
+	"name": "vscode-tailwindcss",
+	"displayName": "Tailwind CSS Autocomplete for Visual Studio Code",
+	"description": "",
+	"version": "0.1.0",
+	"publisher": "sidharthachatterjee",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sidharthachatterjee/vscode-tailwindcss"
+	},
+	"icon": "logo.png",
+	"engines": {
+		"vscode": "^1.23.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "src/extension",
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"vscode": "^1.1.6"
+	},
+	"prettier": {
+		"semi": false,
+		"singleQuote": true
+	},
+	"dependencies": {
+		"lodash": "^4.17.11"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Sidhartha Chatterjee",
+		"url": "http://github.com/sidharthachatterjee"
+	},
+	"keywords": [
+		"vscode-extension",
+		"tailwindcss"
+	],
+	"__metadata": {
+		"id": "0210d898-1052-4c26-8db9-defb85f930b3",
+		"publisherId": "462e2fc5-97f5-4514-bb85-3fc075dbb0eb",
+		"publisherDisplayName": "Sidhartha Chatterjee"
+	}
+}

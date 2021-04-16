@@ -1,0 +1,55 @@
+{
+	"name": "Arduino",
+	"version": "0.0.4",
+	"publisher": "moozzyk",
+	"description": "Arduino support for Visual Studio Code",
+	"author": {
+		"name": "Pawel Kadluczka"
+	},
+	"icon": "images/ArduinoCommunityLogo.png",
+	"categories": [
+		"Languages"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/moozzyk/ArduinoCode.git"
+	},
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "arduino",
+				"extensions": [
+					".ino",
+					".pde"
+				],
+				"aliases": [
+					"Arduino",
+					"arduino"
+				],
+				"configuration": "./arduino.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "arduino",
+				"path": "./syntaxes/arduino.tmLanguage",
+				"scopeName": "source.c++.arduino"
+			}
+		],
+		"snippets": [
+			{
+				"language": "arduino",
+				"path": "./snippets/arduino.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "fef34a3f-ede8-49c1-8b6b-20345eb423a6",
+		"publisherId": "e83f1a8c-e92c-4568-b73a-93e588b0ca5c",
+		"publisherDisplayName": "moozzyk",
+		"installedTimestamp": 1618169185721
+	}
+}
