@@ -1,9 +1,10 @@
 [user]
 	name = joeyj364
-	email = joeyjnrgold@gmail.com
+	email = 71462893+joey364@users.noreply.github.com
 [core]
 	autocrlf = false
 	safecrlf = true
+	editor = nvim~
 [alias]
 	co = checkout
 	ci = commit 
