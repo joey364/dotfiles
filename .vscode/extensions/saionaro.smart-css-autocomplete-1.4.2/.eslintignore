@@ -1,5 +1,0 @@
-node_modules/**
-out/**
-.releaserc.js
-jest.config.js
-commitlint.config.js
