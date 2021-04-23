@@ -201,6 +201,9 @@ export NVM_DIR="$HOME/.nvm"
 # WebP setup
 export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
 
+# Clangd
+export PATH=$PATH:/usr/bin/clangd-9
+
 #Codi Shell wrapper
 codi() {
    local syntax="${1:-python}"
