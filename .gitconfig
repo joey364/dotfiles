@@ -15,3 +15,5 @@
 	type = cat-file -t 
 	dump = cat-file -p
 
+[init]
+	defaultBranch = main
