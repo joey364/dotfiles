@@ -217,3 +217,5 @@ codi() {
      hi NonText ctermfg=0 |\
      Codi $syntax" "$@"
 }
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
