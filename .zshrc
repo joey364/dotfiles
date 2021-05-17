@@ -146,8 +146,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias snap='sudo snap'
     alias watch='sass $@ --watch -s compressed '
     alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-    alias sqstrt='sudo /opt/lampp/lampp start'
-    alias sqstp='sudo /opt/lampp/lampp stop'
 
 fi
 
@@ -221,3 +219,5 @@ codi() {
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # firefox
 export PATH=/opt/firefox/firefox:$PATH
+# cargo
+export PATH=/home/joel/.cargo/bin:$PATH
