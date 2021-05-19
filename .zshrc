@@ -125,7 +125,8 @@ ZSH_THEME_VIRTUALENV_SUFFIX=]
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    # alias ls='ls --color=auto'
+    alias ls='exa'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -146,6 +147,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias snap='sudo snap'
     alias watch='sass $@ --watch -s compressed '
     alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+    alias cat='~/.cargo/bin/bat'
+    alias logout='gnome-session-quit'
 
 fi
 
@@ -177,10 +180,10 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 bindkey -M viins 'jk' vi-cmd-mode
 
 # support for pywal themes 
-(cat ~/.cache/wal/sequences &)
+(\cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+\cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
