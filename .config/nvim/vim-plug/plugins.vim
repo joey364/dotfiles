@@ -34,7 +34,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "Vim Commentary"
     Plug 'tpope/vim-commentary' 
     "Vim auto save"
-    Plug '907th/vim-auto-save' 
+    " Plug '907th/vim-auto-save' 
+    "Plug 'chrisbra/vim-autosave' 
     "Tagalong not working"
     Plug 'AndrewRadev/tagalong.vim'
     "Tabnine for vim

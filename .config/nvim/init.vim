@@ -10,6 +10,5 @@ source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/comments.vim
 source $HOME/.config/nvim/plug-config/snippets.vim
 source $HOME/.config/nvim/plug-config/jsx-tsx-syntax-highlighting.vim
-source $HOME/.config/nvim/plug-config/auto-save.vim
 source $HOME/.config/nvim/plug-config/auto-rename.vim
 source $HOME/.config/nvim/plug-config/codi-settings.vim
