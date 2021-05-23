@@ -224,3 +224,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=/opt/firefox/firefox:$PATH
 # cargo
 export PATH=/home/joel/.cargo/bin:$PATH
+
+# Starship prompt
+ eval "$(starship init zsh)"
+
+export STARSHIP_CONFIG=~/.config/starship.toml 
