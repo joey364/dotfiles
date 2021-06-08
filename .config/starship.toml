@@ -34,6 +34,7 @@ threshold = 10
 style = "bold red"
 
 [git_branch]
+format ="[$symbol$branch]($style) " 
 symbol = "🌱 "
 truncation_length = 4
 truncation_symbol = ""
@@ -57,3 +58,10 @@ modified = "📝"
 staged = '[++\($count\)](green)'
 renamed = "👅"
 deleted = "🗑"
+
+[nodejs]
+format = "[ $version ](bold green)"
+
+[shell]
+disabled = true
+zsh_indicator = "_"
