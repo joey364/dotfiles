@@ -135,7 +135,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
     alias debinstall='sudo dpkg -i $@'
-    alias install='sudo apt install $@ -y'
+    alias install='sudo apt-fast install $@ -y'
     alias remove='sudo apt remove $@ -y'
     alias apdate='sudo apt-fast update'
     alias apgrade='sudo apt-fast upgrade'
@@ -150,6 +150,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     alias cat='~/.cargo/bin/bat'
     alias logout='gnome-session-quit'
+    alias yarn='yarn --emoji true'
 
 fi
 
