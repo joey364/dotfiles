@@ -10,7 +10,6 @@ fi
 
 plugins=(
   git
-  virtualenvwrapper
   vi-mode
 )
 
@@ -75,7 +74,7 @@ ZSH_THEME="robbyrussell"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+ HIST_STAMPS="mm/dd/yyyy"
 
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -98,9 +97,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
- else
    export EDITOR='nvim'
+ else
+   export EDITOR='vim'
  fi
 
 # Compilation flags
@@ -112,12 +111,9 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
- alias zshconfig="mate ~/.zshrc"
- alias ohmyzsh="mate ~/.oh-my-zsh"
+ # alias zshconfig="mate ~/.zshrc"
+ # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-ZSH_THEME_VIRTUALENV_PREFIX=[
-ZSH_THEME_VIRTUALENV_SUFFIX=]
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -138,7 +134,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias install='sudo apt-fast install $@ -y'
     alias remove='sudo apt remove $@ -y'
     alias apdate='sudo apt-fast update'
-    alias apgrade='sudo apt-fast upgrade'
+    alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
     alias autoremove= 'sudo apt autoremove'
     alias us='sudo nordvpn c United_States'
     alias uk='sudo nordvpn c United_Kingdom'
@@ -191,7 +187,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 source ~/.cache/wal/colors-tty.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /home/joel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #Support for zsh autosuggestions 
