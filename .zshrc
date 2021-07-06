@@ -227,3 +227,6 @@ export PATH=/home/joel/.cargo/bin:$PATH
  eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG=~/.config/starship.toml 
+
+# Go installation 
+export PATH=$PATH:/usr/local/go/bin
