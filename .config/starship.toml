@@ -9,34 +9,20 @@ truncation_length = 1
 truncation_symbol = ""
 
 # [↝ , ↜] Replace the "❯" symbol in the prompt with "➜"
+# [», «] 
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[»](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-vicmd_symbol = "[«](bold red) "
-error_symbol = "[✗](bold red) "
+success_symbol = "[↝ ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+vicmd_symbol = "[↜ ](bold red)"
+error_symbol = "[✗](bold red)"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
 disabled = true
 
-# Use custom format
-format = """
-[┌───────────────────>](bold green)
-[│](bold green)$directory$rust$package
-[└─>](bold green) """
-
-[battery]
-full_symbol = "🔋 "
-charging_symbol = "⚡️ "
-discharging_symbol = "💀 "
-
-[[battery.display]]
-threshold = 10
-style = "bold red"
-
 [git_branch]
 format ="[$symbol$branch]($style) " 
 symbol = "🌱 "
-truncation_length = 4
+truncation_length = 6
 truncation_symbol = ""
 
 [git_commit]
@@ -62,6 +48,3 @@ deleted = "🗑"
 [nodejs]
 format = "[ $version ](bold green)"
 
-[shell]
-disabled = true
-zsh_indicator = "_"
