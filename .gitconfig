@@ -7,8 +7,11 @@
 	safecrlf = true
 	editor = vim
 [alias]
+  aa = add -A .
 	co = checkout
-	ci = commit 
+  cob = checkout -b
+	cm = commit -m 
+  cp = cherry-pick
 	nci = commit -a --allow-empty-message -m ''
 	st = status
 	br = branch
@@ -16,6 +19,13 @@
 	type = cat-file -t 
 	dump = cat-file -p
 	df = diff
+  unstage = reset --soft HEAD*
+  undo = reset HEAD-1
+  rv = revert
+  rl = reflog
+  save = stash push
+  pop = stash pop
+  apply = stash apply
 
 [init]
 	defaultBranch = main
