@@ -6,7 +6,7 @@
 # fi
 
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/bin:/usr/local/bin:$PATH
+ # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
 # nvm setup
@@ -20,13 +20,13 @@ export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
 export PATH=$PATH:/usr/bin/clangd-9
 
 # Yarn Setup
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # firefox
-export PATH=/opt/firefox/firefox:$PATH
+export PATH=$PATH:/opt/firefox/firefox
 
 # cargo
-export PATH=/home/joel/.cargo/bin:$PATH
+# export PATH=/home/joel/.cargo/bin:$PATH
 
 # Go installation 
 export PATH=$PATH:/usr/local/go/bin
