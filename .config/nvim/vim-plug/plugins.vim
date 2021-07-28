@@ -33,8 +33,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround'
     "Vim Commentary"
     Plug 'tpope/vim-commentary' 
-    "Vim auto save"
-    " Plug '907th/vim-auto-save' 
+    " Plug tailwind intellisense' 
+    Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
     "Plug 'chrisbra/vim-autosave' 
     "Tagalong not working"
     Plug 'AndrewRadev/tagalong.vim'
@@ -43,7 +43,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Codi Interactive Scratchpad 
     Plug 'metakirby5/codi.vim'
     " Treesitter
-    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate' }
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate' }
 ""    "
 "
 call plug#end()
