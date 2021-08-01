@@ -40,14 +40,14 @@ plugins=(
 export ZSH="/home/joel/.oh-my-zsh"
 
 # Enable colors and change prompt:
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# autoload -U colors && colors
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -147,29 +147,45 @@ if [ -x /usr/bin/dircolors ]; then
     # alias ls='ls --color=auto'
     alias ls='exa'
     alias la='exa -lah'
+    # alias ll= 'exa -l'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
+    # navigation
+    alias ...= 'cd ../..'
+    alias ..3= 'cd ../../..'
+
+    # Grepa aliases
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    # Package management aliases 
     alias debinstall='sudo dpkg -i $@'
     alias install='sudo apt-fast install $@ -y'
     alias remove='sudo apt remove $@ -y'
     alias apdate='sudo apt-fast update'
     alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
-    alias autoremove= 'sudo apt autoremove'
+    # alias purge= 'sudo apt purge $@ -y'
+    # alias search= 'apt search $@'
+
+    # Nordvpn aliases
     alias us='sudo nordvpn c United_States'
     alias uk='sudo nordvpn c United_Kingdom'
     alias jp='sudo nordvpn c Japan'
     alias d='nordvpn d'
+
+    # dotfiles setup
+    alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+    # Useful helpers
     alias uptime='uptime -p'
     alias snap='sudo snap'
     alias watch='sass $@ --watch -s compressed '
-    alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
     alias cat='~/.cargo/bin/bat'
     alias logout='gnome-session-quit'
     alias yarn='yarn --emoji true'
+    alias nvim='lvim'
 
 fi
 
@@ -209,11 +225,10 @@ bindkey -M viins 'jk' vi-cmd-mode
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# zsh syntax highlighting
 source /home/joel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#Support for zsh autosuggestions 
+# Support for zsh autosuggestions 
 source /home/joel/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #Codi Shell wrapper for neovim
