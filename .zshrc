@@ -9,31 +9,29 @@
  # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
-# nvm setup
+# nvm (node version manager) 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm nvm setup  
 
-# WebP setup
+# WebP 
 export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
 
 # Clangd
 export PATH=$PATH:/usr/bin/clangd-9
 
-# Yarn Setup
+# Yarn 
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
-# firefox
+# Firefox
 export PATH=$PATH:/opt/firefox/firefox
 
-# cargo
-# export PATH=/home/joel/.cargo/bin:$PATH
-
-# Go installation 
+# Go  
 export PATH=$PATH:/usr/local/go/bin
 
 plugins=(
   git
   vi-mode
+  zsh-autosuggestions
 )
 
 # Path to your oh-my-zsh installation.
@@ -151,14 +149,15 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    # navigation
-    alias ...= 'cd ../..'
-    alias ..3= 'cd ../../..'
-
     # Grepa aliases
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+
+    # confirm before overwriting something
+    alias cp="cp -i"
+    alias mv='mv -i'
+    alias rm='rm -i'
 
     # Package management aliases 
     alias debinstall='sudo dpkg -i $@'
@@ -166,8 +165,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias remove='sudo apt remove $@ -y'
     alias apdate='sudo apt-fast update'
     alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
-    # alias purge= 'sudo apt purge $@ -y'
-    # alias search= 'apt search $@'
 
     # Nordvpn aliases
     alias us='sudo nordvpn c United_States'
@@ -219,17 +216,11 @@ bindkey -M viins 'jk' vi-cmd-mode
 # support for pywal themes 
 (\cat ~/.cache/wal/sequences &)
 
-# Alternative (blocks terminal for 0-3ms)
-\cat ~/.cache/wal/sequences
-
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
 # zsh syntax highlighting
 source /home/joel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Support for zsh autosuggestions 
-source /home/joel/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #Codi Shell wrapper for neovim
 codi() {
