@@ -154,11 +154,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 
-    # confirm before overwriting something
-    alias cp="cp -i"
-    alias mv='mv -i'
-    alias rm='rm -i'
-
     # Package management aliases 
     alias debinstall='sudo dpkg -i $@'
     alias install='sudo apt-fast install $@ -y'
@@ -213,12 +208,12 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # remap escape key to jk 
 bindkey -M viins 'jk' vi-cmd-mode
 
-# support for pywal themes 
-(\cat ~/.cache/wal/sequences &)
-
-# To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
-
+# # support for pywal themes 
+# (\cat ~/.cache/wal/sequences &)
+# 
+# # To add support for TTYs this line can be optionally added.
+# source ~/.cache/wal/colors-tty.sh
+# 
 # zsh syntax highlighting
 source /home/joel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
