@@ -1,3 +1,1 @@
-# Dotfiles repo
-
-> Bootstrapping script tor restore coming soon...
+# Dotfiles
