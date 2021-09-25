@@ -146,8 +146,8 @@ source $ZSH/oh-my-zsh.sh
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     # alias ls='ls --color=auto'
-    alias ls='exa'
-    alias la='exa -lah'
+    alias ls='exa --icons'
+    alias la='exa -lah --icons'
     # alias ll= 'exa -l'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
