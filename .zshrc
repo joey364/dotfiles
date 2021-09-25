@@ -28,6 +28,9 @@ export PATH=$PATH:/opt/firefox/firefox
 # Go  
 export PATH=$PATH:/usr/local/go/bin
 
+# Flutter  
+export PATH=$PATH:/opt/flutter/bin
+
 plugins=(
   git
   vi-mode
