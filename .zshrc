@@ -150,6 +150,7 @@ if [ -x /usr/bin/dircolors ]; then
     # alias ls='ls --color=auto'
     alias ls='exa --icons'
     alias la='exa -lah --icons'
+    alias ~='~ && clear'
     # alias ll= 'exa -l'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
