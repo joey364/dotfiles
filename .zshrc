@@ -35,6 +35,8 @@ plugins=(
   git
   vi-mode
   zsh-autosuggestions
+  zsh-syntax-highlighting
+  autojump
 )
 
 # Path to your oh-my-zsh installation.
@@ -185,7 +187,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 #To add support for autojump
-[[ -s /home/joel/.autojump/etc/profile.d/autojump.sh ]] && source /home/joel/.autojump/etc/profile.d/autojump.sh
+# [[ -s /home/joel/.autojump/etc/profile.d/autojump.sh ]] && source /home/joel/.autojump/etc/profile.d/autojump.sh
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -216,9 +218,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 # 
 # # To add support for TTYs this line can be optionally added.
 # source ~/.cache/wal/colors-tty.sh
-# 
-# zsh syntax highlighting
-source /home/joel/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ 
 
 #Codi Shell wrapper for neovim
 codi() {
