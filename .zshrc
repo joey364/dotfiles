@@ -186,9 +186,6 @@ if [ -x /usr/bin/dircolors ]; then
 
 fi
 
-#To add support for autojump
-# [[ -s /home/joel/.autojump/etc/profile.d/autojump.sh ]] && source /home/joel/.autojump/etc/profile.d/autojump.sh
-
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
