@@ -6,7 +6,7 @@
 # fi
 
 # If you come from bash you might have to change your $PATH.
- # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 
 # nvm (node version manager) 
@@ -84,10 +84,10 @@ export ZSH="/home/joel/.oh-my-zsh"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
- ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
- COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -100,7 +100,7 @@ export ZSH="/home/joel/.oh-my-zsh"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
- HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -119,14 +119,14 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
- export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nvim'
- else
-   export EDITOR='vim'
- fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -146,63 +146,68 @@ source $ZSH/oh-my-zsh.sh
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    # alias ls='ls --color=auto'
-    alias ls='exa --icons'
-    alias la='exa -lah --icons'
-    alias ~='~ && clear'
-    # alias ll= 'exa -l'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  # alias ls='ls --color=auto'
+  alias ls='exa --icons'
+  alias la='exa -lah --icons'
+  alias ~='~ && clear'
+  # alias ll= 'exa -l'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    # Grepa aliases
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-
-    # Package management aliases 
-    alias debinstall='sudo dpkg -i $@'
-    alias install='sudo apt-fast install $@ -y'
-    alias remove='sudo apt remove $@ -y'
-    alias apdate='sudo apt-fast update'
-    alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
-
-    # Nordvpn aliases
-    alias us='sudo nordvpn c United_States'
-    alias uk='sudo nordvpn c United_Kingdom'
-    alias jp='sudo nordvpn c Japan'
-    alias d='nordvpn d'
-
-    # dotfiles setup
-    alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
-    # Useful helpers
-    alias uptime='uptime -p'
-    alias snap='sudo snap'
-    alias watch='sass $@ --watch -s compressed '
-    alias cat='~/.cargo/bin/bat'
-    alias logout='gnome-session-quit'
-    alias yarn='yarn --emoji true'
-    alias nvim='lvim'
+  # Grepa aliases
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 
 fi
 
+# Package management aliases 
+alias debinstall='sudo dpkg -i $@'
+alias install='sudo apt-fast install $@ -y'
+alias remove='sudo apt remove $@ -y'
+alias apdate='sudo apt-fast update'
+alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
+
+# Nordvpn aliases
+alias us='sudo nordvpn c United_States'
+alias uk='sudo nordvpn c United_Kingdom'
+alias jp='sudo nordvpn c Japan'
+alias d='nordvpn d'
+
+# dotfiles setup
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+# Useful helpers
+alias uptime='uptime -p'
+alias snap='sudo snap'
+alias watch='sass $@ --watch -s compressed '
+alias cat='~/.cargo/bin/bat'
+alias logout='gnome-session-quit'
+alias yarn='yarn --emoji true'
+alias nvim='lvim'
+
+# convert other document formats to pdf using lowriter
+alias x2pdf='lowriter --convert-to pdf $@' 
+
+
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+if [[ ${KEYMAP} == vicmd ]] ||
+  [[ $1 = 'block' ]]; then
+  echo -ne '\e[1 q'
+elif [[ ${KEYMAP} == main ]] ||
+  [[ ${KEYMAP} == viins ]] ||
+  [[ ${KEYMAP} = '' ]] ||
+  [[ $1 = 'beam' ]]; then
+  echo -ne '\e[5 q'
+fi
 }
 zle -N zle-keymap-select
 zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+echo -ne "\e[5 q"
 }
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
@@ -216,25 +221,25 @@ bindkey -M viins 'jk' vi-cmd-mode
 # 
 # # To add support for TTYs this line can be optionally added.
 # source ~/.cache/wal/colors-tty.sh
- 
+
 
 #Codi Shell wrapper for neovim
 codi() {
-   local syntax="${1:-python}"
-   shift
-   nvim -c \
-     "let g:startify_disable_at_vimenter = 1 |\
-     set bt=nofile ls=0 noru nonu nornu |\
-     hi CodiVirtualText guifg=red
-     hi ColorColumn ctermbg=NONE |\
-     hi VertSplit ctermbg=NONE |\
-     hi NonText ctermfg=0 |\
-     Codi $syntax" "$@"
-}
+  local syntax="${1:-python}"
+  shift
+  nvim -c \
+    "let g:startify_disable_at_vimenter = 1 |\
+    set bt=nofile ls=0 noru nonu nornu |\
+    hi CodiVirtualText guifg=red
+      hi ColorColumn ctermbg=NONE |\
+        hi VertSplit ctermbg=NONE |\
+        hi NonText ctermfg=0 |\
+        Codi $syntax" "$@"
+      }
 
 
 # Please leave me here 
 # Starship prompt
- eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG=~/.config/starship.toml 
