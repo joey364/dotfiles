@@ -123,9 +123,9 @@ export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nvim'
-else
   export EDITOR='vim'
+else
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -185,7 +185,7 @@ alias watch='sass $@ --watch -s compressed '
 alias cat='~/.cargo/bin/bat'
 alias logout='gnome-session-quit'
 alias yarn='yarn --emoji true'
-alias nvim='lvim'
+# alias nvim='lvim'
 
 # convert other document formats to pdf using lowriter
 alias x2pdf='lowriter --convert-to pdf $@' 
