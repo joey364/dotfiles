@@ -26,7 +26,7 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 export PATH=$PATH:/opt/firefox/firefox
 
 # Go  
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:~/go/bin/
 
 # Flutter  
 export PATH=$PATH:/opt/flutter/bin
