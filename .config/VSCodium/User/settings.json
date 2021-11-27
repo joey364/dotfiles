@@ -1,0 +1,119 @@
+{
+  // Window
+  "window.zoomLevel": 1.5,
+  // Workbench
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+  "workbench.editor.enablePreview": true,
+  // Languages
+  "javascript.inlayHints.parameterNames.enabled": "none",
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  // Editor
+  "editor.fontSize": 18,
+  "editor.formatOnSave": true,
+  // "editor.fontFamily": "Rec Mono Duotone",
+  // "editor.fontFamily": "FiraCode NF",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.cursorBlinking": "expand",
+  "editor.inlayHints.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  // Files
+  "files.autoSaveDelay": 0,
+  "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true
+  },
+  // Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "razor": "html",
+    "plaintext": "pug"
+  },
+  // Vim extension
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  // prettier
+  "prettier.arrowParens": "always",
+  "prettier.jsxBracketSameLine": false,
+  "prettier.bracketSpacing": true,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": false,
+  // colorize
+  "colorize.languages": [
+    "css",
+    "javascript",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "sss",
+    "stylus",
+    "svg",
+    "typescript",
+    "xml"
+  ],
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.external.linuxExec": "/usr/bin/kitty",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontFamily": "Rec Mono Duotone, Fira Code iScript, Menlo, Monaco, 'Courier New', monospace",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          //following will be in italic
+          "comment",
+          "entity.name.type.class", //class names
+          "constant", //String, Number, Boolean…, this, super
+          "storage.modifier", //static keyword
+          "storage.type.class.js", //class keyword
+          "keyword" //import, export, return…
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          //following will be excluded from italics (VSCode has some defaults for italics)
+
+          "invalid",
+          "keyword.operator",
+          "constant.numeric.css",
+          "keyword.other.unit.px.css",
+          "constant.numeric.decimal.js",
+          "constant.numeric.json"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      }
+    ]
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Starfall Darker"
+}
