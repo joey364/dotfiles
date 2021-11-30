@@ -32,11 +32,11 @@ export PATH=$PATH:/usr/local/go/bin:~/go/bin/
 export PATH=$PATH:/opt/flutter/bin
 
 plugins=(
+  autojump
   git
   vi-mode
   zsh-autosuggestions
   zsh-syntax-highlighting
-  autojump
 )
 
 # Path to your oh-my-zsh installation.
