@@ -162,11 +162,20 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Package management aliases 
-alias debinstall='sudo dpkg -i $@'
-alias install='sudo apt-fast install $@ -y'
-alias remove='sudo apt remove $@ -y'
-alias apdate='sudo apt-fast update'
-alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
+if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
+  alias rpminstall='rpm -i $@'
+  alias install='sudo dnf install $@ -y'
+  alias remove='sudo dnf remove $@ -y'
+  alias update='sudo dnf update'
+  alias upgrade='sudo dnf upgrade -y'
+  alias search='sudo dnf search $@'
+else
+  alias debinstall='sudo dpkg -i $@'
+  alias install='sudo apt-fast install $@ -y'
+  alias remove='sudo apt remove $@ -y'
+  alias apdate='sudo apt-fast update'
+  alias apgrade='sudo apt-fast update; sudo apt-fast upgrade -y'
+fi
 
 # Nordvpn aliases
 alias us='sudo nordvpn c United_States'
