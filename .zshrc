@@ -6,7 +6,7 @@
 # fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 
 
 # nvm (node version manager) 
@@ -14,22 +14,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm nvm setup  
 
 # WebP 
-export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
+# export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
 
 # Clangd
-export PATH=$PATH:/usr/bin/clangd-9
+# export PATH=$PATH:/usr/bin/clangd-9
 
 # Yarn 
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # Firefox
-export PATH=$PATH:/opt/firefox/firefox
+# export PATH=$PATH:/opt/firefox/firefox
 
 # Go  
 export PATH=$PATH:/usr/local/go/bin:~/go/bin/
 
 # Flutter  
-export PATH=$PATH:/opt/flutter/bin
+# export PATH=$PATH:/opt/flutter/bin
 
 plugins=(
   autojump
@@ -101,7 +101,6 @@ COMPLETION_WAITING_DOTS="true"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
 HIST_STAMPS="mm/dd/yyyy"
-
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
