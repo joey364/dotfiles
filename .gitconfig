@@ -1,7 +1,7 @@
 [user]
 	name = joey364
 	email = 71462893+joey364@users.noreply.github.com
-	signingkey = 1A1F361D4E54944DB42E8FAF7C8A0DA2F95F3511
+	signingkey = 6C48BBAB78B6BCDD
 [core]
 	autocrlf = false
 	safecrlf = true
