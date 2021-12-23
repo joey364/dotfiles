@@ -11,6 +11,7 @@
 	co = checkout
   cob = checkout -b
 	cm = commit -m 
+  cms = commit -S -m 
   cp = cherry-pick
 	nci = commit -a --allow-empty-message -m ''
 	st = status
