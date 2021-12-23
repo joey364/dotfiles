@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# check git installation and pull dotfiles repo
+if [[ -f $(command -v git) ]]; then
+  echo 'found git'
+  git clone --bare https://bitbucket.org/durdn/cfg.git $HOME/.cfg
+  else
+    echo 'Install git then run the script'
+    exit 1
+fi
+
+# function to mimick config alias
+
+function config {
+   /usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME "$@"
+}
+
+# Create a backup of existing config 
+
+config checkout 
+
+if [ $? = 0 ]; then
+  echo "Checked out config.";
+  else
+    # existing config found
+    mkdir -p .config-backup
+    echo "Backing up pre-existing dot files.";
+    config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+fi;
+
+config checkout
+config config status.showUntrackedFiles no
