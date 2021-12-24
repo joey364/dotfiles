@@ -170,8 +170,10 @@ fi
 
 # Package management aliases 
 if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
-  alias rpminstall='rpm -i $@'
+  alias rpminstall='sudo rpm -i $@'
   alias install='sudo dnf install $@ -y'
+  alias reinstall='sudo dnf reinstall $@ -y'
+  alias check-update='sudo dnf check-update'
   alias remove='sudo dnf remove $@ -y'
   alias update='sudo dnf update'
   alias upgrade='sudo dnf upgrade -y'
