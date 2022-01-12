@@ -177,7 +177,7 @@ if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
   alias remove='sudo dnf remove $@ -y'
   alias update='sudo dnf update'
   alias upgrade='sudo dnf upgrade -y'
-  alias search='sudo dnf search $@'
+  alias search='dnf search $@'
 else
   alias debinstall='sudo dpkg -i $@'
   alias install='sudo apt-fast install $@ -y'
