@@ -6,7 +6,7 @@
 pkgs=(
 	"git"
 	"kitty"
-	"neovimz"
+	"neovim"
 	"openssl" # dependency for tealdeer
 	"python"
 	"yarn"
@@ -21,6 +21,9 @@ cargo_pkgs=(
 )
 
 install_core_pkgs() {
+	echo "Installing core pkgs..."
+	echo ""
+
 	for pkg in "${pkgs[@]}"; do
 		if hash "$pkg" 2>/dev/null; then
 			echo "$pkg is installed..."
@@ -85,6 +88,35 @@ install_omz() {
 	echo ""
 }
 
+_zsh_autosuggestions() {
+	echo "Zsh autosuggestions"
+	git clone https://github.com/zsh-users/zsh-autosuggestions \
+		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	echo
+}
+
+_zsh_syntax_highlighting() {
+	echo "Zsh syntax highlighting"
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	echo
+}
+
+_zsh_autojump() {
+	echo "Install Autojump plugin"
+	autojump_install_dir=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/autojump
+	git clone https://github.com//wting/autojump.git $autojump_install_dir
+	cd $autojump_install_dir && ./install.py
+	echo
+}
+
+install_zsh_plugins() {
+	echo "installing zsh plugins.."
+	_zsh_syntax_highlighting
+	_zsh_autosuggestions
+	_zsh_autojump
+}
+
 #################################################################
 ##### Dotfiles setup                                        #####
 #################################################################
@@ -98,7 +130,7 @@ clone_dotfiles() {
 		echo 'Install git then re-run the script'
 		exit 1
 	fi
-	echo ""
+	echo
 }
 
 # function to mimick config alias
@@ -125,19 +157,47 @@ checkout_config() {
 	config config status.showUntrackedFiles no
 }
 
+print_banner() {
+	cat <<'EOF'
+     _       _    __ _ _                      _               
+  __| | ___ | |_ / _(_) | ___  ___   ___  ___| |_ _   _ _ __  
+ / _` |/ _ \| __| |_| | |/ _ \/ __| / __|/ _ \ __| | | | '_ \ 
+| (_| | (_) | |_|  _| | |  __/\__ \ \__ \  __/ |_| |_| | |_) |
+ \__,_|\___/ \__|_| |_|_|\___||___/ |___/\___|\__|\__,_| .__/ 
+                                                       |_|    
+EOF
+}
+
 main() {
+
+	print_banner
+
 	echo "you are running the script..."
 	echo "sudo access needed"
 	sudo -v
 
-	# install_core_pkgs "$@"
+	install_core_pkgs "$@"
 
-	# install_rustup
-	# install_cargo_pkgs
-	# install_starship
+	echo "Changing shell to zsh.."
+	chsh -s "$(which zsh)"
 
-	echo ""
-	echo "Have a nice day ;)"
+	install_omz
+
+	install_zsh_plugins
+
+	install_rustup
+
+	install_cargo_pkgs
+
+	install_starship
+
+	install_nvm
+
+	clone_dotfiles
+
+	checkout_config
+
+	echo "Have a nice day 😃"
 }
 
 main "$@"
