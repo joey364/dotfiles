@@ -1,25 +1,25 @@
 [user]
-	name = joey364
-	email = 71462893+joey364@users.noreply.github.com
-	signingkey = 6C48BBAB78B6BCDD
+  name = joey364
+  email = 71462893+joey364@users.noreply.github.com
+  signingkey = A856C64E1E660C01
 [core]
-	autocrlf = false
-	safecrlf = true
-	editor = nvim
+  autocrlf = false
+  safecrlf = true
+  editor = nvim
 [alias]
   aa = add -A .
-	co = checkout
+  co = checkout
   cob = checkout -b
-	cm = commit -m 
+  cm = commit -m 
   cms = commit -S -m 
   cp = cherry-pick
-	nci = commit -a --allow-empty-message -m ''
-	st = status
-	br = branch
+  nci = commit -a --allow-empty-message -m ''
+  st = status
+  br = branch
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-	type = cat-file -t 
-	dump = cat-file -p
-	df = diff
+  type = cat-file -t 
+  dump = cat-file -p
+  df = diff
   unstage = reset --soft HEAD*
   undo = reset HEAD-1
   rv = revert
@@ -34,3 +34,9 @@
 	ui = auto
 [help]
 	autocorrect = 1
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
