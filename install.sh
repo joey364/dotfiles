@@ -77,7 +77,7 @@ install_starship() {
 # Node version manager install
 install_nvm() {
 	echo "Installing Node Version Manager..."
-	curl -o- https://raw.githubusercontent.com/nvm-sh/v0.39.1/install.sh | bash
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 	echo ""
 }
 
