@@ -34,15 +34,14 @@ install_core_pkgs() {
 			case $OS in
 			'Linux')
 				if [ -f "/etc/arch-release" ]; then
-					echo "arch system found..."
 					echo "using pacman to install $pkg"
 					sudo pacman -Syu $pkg || echo "$pkg failed to install"
 				elif [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
-					echo "Redhat/Fedora system found..."
 					echo "Using dnf to install $pkg"
-					sudo dnf install $pkg || echo "$pkg failed to install"
+					sudo dnf install -y $pkg || echo "$pkg failed to install"
 				else
-					sudo apt install "$pkg" || echo "$pkg failed to install"
+					echo "Using apt to install $pkg"
+					sudo apt install -y "$pkg" || echo "$pkg failed to install"
 				fi
 				;;
 			*) ;;
