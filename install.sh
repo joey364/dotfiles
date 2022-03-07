@@ -13,9 +13,10 @@ pkgs=(
 )
 
 cargo_pkgs=(
-	"stylua"
-	"exa"
 	"bat"
+	"exa"
+	"starship"
+	"stylua"
 	"tealdeer"
 )
 
@@ -64,13 +65,6 @@ install_cargo_pkgs() {
 install_rustup() {
 	echo "installing rust via rustup..."
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	echo ""
-}
-
-# Starship Prompt install
-install_starship() {
-	echo "Installing starship prompt..."
-	sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 	echo ""
 }
 
