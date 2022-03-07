@@ -9,7 +9,7 @@ pkgs=(
 	"neovim"
 	"openssl" # dependency for tealdeer
 	"python"
-	"yarn"
+	# "yarn"
 	"zsh"
 )
 
@@ -80,6 +80,25 @@ install_nvm() {
 	echo "Installing Node Version Manager..."
 	curl -o- https://raw.githubusercontent.com/nvm-sh/v0.39.1/install.sh | bash
 	echo ""
+}
+
+# Yarn package manager
+install_yarn() {
+	echo "Installing yarn.."
+	# arch
+	if [ -f "/etc/arch-release" ]; then
+		pacman -S yarn
+	elif [ -f "/etc/fedora-release" ]; then
+		# fedora / rhel
+		curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+		sudo dnf install yarn
+	else
+		# debian/ubuntu
+		curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+		echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+		sudo apt update && sudo apt install yarn
+	fi
+
 }
 
 # Install Oh My Zsh
