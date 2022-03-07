@@ -55,8 +55,9 @@ install_core_pkgs() {
 install_cargo_pkgs() {
 	echo "Installing packages with cargo..."
 	for pkg in "${cargo_pkgs[@]}"; do
-		"$(which cargo)" install $pkg
-		echo ""
+		if command -v cargo &>/dev/null; then
+			cargo install $pkg
+		fi
 	done
 }
 
@@ -187,7 +188,7 @@ main() {
 
 	install_rustup
 
-	install_cargo_pkgs
+	# install_cargo_pkgs
 
 	install_starship
 
