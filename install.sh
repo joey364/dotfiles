@@ -9,7 +9,6 @@ pkgs=(
 	"neovim"
 	"openssl" # dependency for tealdeer
 	"python"
-	# "yarn"
 	"zsh"
 )
 
@@ -87,16 +86,19 @@ install_yarn() {
 	echo "Installing yarn.."
 	# arch
 	if [ -f "/etc/arch-release" ]; then
-		pacman -S yarn
+		echo "installing yarn with pacman.."
+		pacman -Sy yarn
 	elif [ -f "/etc/fedora-release" ]; then
 		# fedora / rhel
+		echo "installing yarn with dnf.."
 		curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-		sudo dnf install yarn
+		sudo dnf -y install yarn
 	else
 		# debian/ubuntu
+		echo "installing yarn with apt.."
 		curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 		echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-		sudo apt update && sudo apt install yarn
+		sudo apt update && sudo apt install yarn -y
 	fi
 
 }
