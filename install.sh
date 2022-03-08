@@ -22,7 +22,6 @@ cargo_pkgs=(
 
 install_core_pkgs() {
 	echo "Installing core pkgs..."
-	echo ""
 
 	for pkg in "${pkgs[@]}"; do
 		if hash "$pkg" 2>/dev/null; then
@@ -58,20 +57,23 @@ install_cargo_pkgs() {
 			cargo install $pkg
 		fi
 	done
+	echo
 }
 
 # Rust lang install
 install_rustup() {
 	echo "installing rust via rustup..."
-	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-	echo ""
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+	echo
 }
 
 # Node version manager install
 install_nvm() {
 	echo "Installing Node Version Manager..."
 	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-	echo ""
+	echo
+}
+
 }
 
 # Yarn package manager
@@ -100,7 +102,7 @@ install_yarn() {
 install_omz() {
 	echo "Installing oh my zsh..."
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	echo ""
+	echo
 }
 
 _zsh_autosuggestions() {
@@ -130,6 +132,7 @@ install_zsh_plugins() {
 	_zsh_syntax_highlighting
 	_zsh_autosuggestions
 	_zsh_autojump
+	echo
 }
 
 #################################################################
@@ -139,7 +142,7 @@ install_zsh_plugins() {
 # check git installation and pull dotfiles repo
 clone_dotfiles() {
 	if [[ -f $(command -v git) ]]; then
-		echo 'found git'
+		echo 'Cloning dotfiles repo..'
 		git clone --bare https://github.com/joey364/dotfiles.git $HOME/.dotfiles
 	else
 		echo 'Install git then re-run the script'
