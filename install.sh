@@ -209,6 +209,10 @@ main() {
 	install_nvm
 
 	clone_dotfiles
+	# Updating font cache
+	echo "Updating font cache.."
+	# fc-cache -f
+	echo "done"
 
 	checkout_config
 
