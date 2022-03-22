@@ -1,9 +1,9 @@
-# Dotfiles
+# dotfiles
 
-## Run install script
+### run install script
 
 ```bash
 curl -sL bit.ly/joey364dotfiles | bash
 ```
 
-Have a nice day! 😃
+have a nice day! 😃
