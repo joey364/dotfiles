@@ -199,12 +199,17 @@ alias cat='~/.cargo/bin/bat'
 alias logout='gnome-session-quit'
 alias yarn='yarn --emoji true'
 alias lg='lazygit'
+alias run-as-cron='crontab -l | grep -v '^#' | cut -f 6- -d ' ' | while read CMD; do eval $CMD; done'
 # alias nvim='lvim'
 
 # convert other document formats to pdf using lowriter
 alias x2pdf='lowriter --convert-to pdf $@' 
 
+# adb no permissions fix
+alias adbfix='~/scripts/adb_no_permission_fix.sh'
 
+# remove lunarvim
+alias rm-lvim='~/scripts/rm-lvim.sh'
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
