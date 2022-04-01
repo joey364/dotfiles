@@ -144,27 +144,23 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  # alias ls='ls --color=auto'
-  alias ls='exa --icons'
-  alias la='exa -lah --icons'
-  alias ~='~ && clear'
-  # alias ll= 'exa -l'
-  #alias dir='dir --color=auto'
-  #alias vdir='vdir --color=auto'
+# if [ -x /usr/bin/dircolors ]; then
+#   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#   # alias ls='ls --color=auto'
+#   # alias ll= 'exa -l'
+#   #alias dir='dir --color=auto'
+#   #alias vdir='vdir --color=auto'
+# fi
 
-  # Grepa aliases
-  alias grep='grep --color=auto'
-  alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
+alias ls='exa --icons'
+alias la='exa -lah --icons'
+alias ~='~ && clear'
 
-fi
+# Grepa aliases
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # Package management aliases 
 if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
@@ -177,6 +173,7 @@ if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
   alias update='sudo dnf update'
   alias upgrade='sudo dnf upgrade -y'
   alias search='dnf search $@'
+  alias info='dnf info $@'
 else
   alias debinstall='sudo dpkg -i $@'
   alias install='sudo apt-fast install $@ -y'
@@ -192,7 +189,7 @@ alias jp='sudo nordvpn c Japan'
 alias d='nordvpn d'
 
 # dotfiles setup
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Useful helpers
 alias uptime='uptime -p'
@@ -201,6 +198,7 @@ alias watch='sass $@ --watch -s compressed '
 alias cat='~/.cargo/bin/bat'
 alias logout='gnome-session-quit'
 alias yarn='yarn --emoji true'
+alias lg='lazygit'
 # alias nvim='lvim'
 
 # convert other document formats to pdf using lowriter
