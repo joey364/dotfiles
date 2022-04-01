@@ -262,3 +262,5 @@ codi() {
 eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG=~/.config/starship.toml 
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
