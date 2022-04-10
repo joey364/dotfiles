@@ -15,7 +15,6 @@ pkgs=(
 cargo_pkgs=(
 	"bat"
 	"exa"
-	"starship"
 	"stylua"
 	"tealdeer"
 )
@@ -74,6 +73,11 @@ install_nvm() {
 	echo
 }
 
+# Starship Prompt
+install_starship() {
+	echo "Installing Starship prompt..."
+	curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+	echo
 }
 
 # Yarn package manager
