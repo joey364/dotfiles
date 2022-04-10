@@ -105,7 +105,6 @@ install_yarn() {
 # Install Oh My Zsh
 install_omz() {
 	echo "Installing oh my zsh..."
-	# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 	echo
 }
@@ -113,14 +112,14 @@ install_omz() {
 _zsh_autosuggestions() {
 	echo "Zsh autosuggestions"
 	git clone https://github.com/zsh-users/zsh-autosuggestions \
-		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	echo
 }
 
 _zsh_syntax_highlighting() {
 	echo "Zsh syntax highlighting"
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+		${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 	echo
 }
 
@@ -141,7 +140,7 @@ install_zsh_plugins() {
 }
 
 #################################################################
-##### Dotfiles setup                                        #####
+##### dotfiles setup                                        #####
 #################################################################
 
 # check git installation and pull dotfiles repo
