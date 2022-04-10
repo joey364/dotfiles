@@ -146,10 +146,10 @@ install_zsh_plugins() {
 # check git installation and pull dotfiles repo
 clone_dotfiles() {
 	if [[ -f $(command -v git) ]]; then
-		echo 'Cloning dotfiles repo..'
+		echo 'cloning dotfiles repo..'
 		git clone --bare https://github.com/joey364/dotfiles.git $HOME/.dotfiles
 	else
-		echo 'Install git then re-run the script'
+		echo 'install git then re-run the script'
 		exit 1
 	fi
 	echo
@@ -158,50 +158,51 @@ clone_dotfiles() {
 # function to mimick config alias
 
 config() {
-	/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
+	/usr/bin/git --git-dir=$home/.dotfiles/ --work-tree=$home "$@"
 }
 
-# Create a backup of existing config
+# create a backup of existing config
 
 checkout_config() {
 	config checkout
 
 	if [ $? = 0 ]; then
-		echo "Checked out config..."
+		echo "checked out config..."
 	else
 		# existing config found
 		mkdir -p .config-backup
-		echo "Backing up pre-existing dot files."
-		config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} .config-backup/{}
+		echo "backing up pre-existing dot files."
+		config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -i{} mv {} .config-backup/{}
 	fi
 
 	config checkout
-	config config status.showUntrackedFiles no
+	config config status.showuntrackedfiles no
 }
 
 print_banner() {
-	cat <<'EOF'
+	cat <<'eof'
      _       _    __ _ _                      _               
   __| | ___ | |_ / _(_) | ___  ___   ___  ___| |_ _   _ _ __  
  / _` |/ _ \| __| |_| | |/ _ \/ __| / __|/ _ \ __| | | | '_ \ 
 | (_| | (_) | |_|  _| | |  __/\__ \ \__ \  __/ |_| |_| | |_) |
  \__,_|\___/ \__|_| |_|_|\___||___/ |___/\___|\__|\__,_| .__/ 
                                                        |_|    
-EOF
+eof
 }
 
 main() {
 
 	print_banner
 
-	echo "you are running the script..."
-	echo "sudo access needed"
+	echo "🤲 sudo access needed"
 	sudo -v
 
-	install_core_pkgs "$@"
 
-	echo "Changing shell to zsh.."
-	chsh -s "$(which zsh)"
+	install_core_pkgs
+
+	clone_dotfiles
+
+	checkout_config
 
 	install_omz
 
@@ -209,21 +210,22 @@ main() {
 
 	install_rustup
 
-	# install_cargo_pkgs
+	install_cargo_pkgs
 
 	install_starship
 
+	install_yarn
+
 	install_nvm
 
-	clone_dotfiles
-	# Updating font cache
-	echo "Updating font cache.."
-	# fc-cache -f
+	updating font cache
+	echo "updating font cache.."
+	fc-cache -f
 	echo "done"
 
-	checkout_config
+	echo "changing shell to zsh.."
+	chsh -s "$(which zsh)"
 
-	echo "Have a nice day 😃"
 }
 
 main "$@"
