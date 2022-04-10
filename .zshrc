@@ -1,9 +1,12 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+
+#          _              
+#  _______| |__  _ __ ___ 
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__ 
+# /___|___/_| |_|_|  \___|
+#
+                        
+# zsh completion init
 autoload -U compinit
 compinit -i
 
@@ -43,22 +46,6 @@ plugins=(
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/joel/.oh-my-zsh"
-
-# Enable colors and change prompt:
-# autoload -U colors && colors
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -110,15 +97,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 # following should be turned off, if sharing history via setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
 
@@ -202,8 +180,8 @@ alias lg='lazygit'
 alias run-as-cron='crontab -l | grep -v '^#' | cut -f 6- -d ' ' | while read CMD; do eval $CMD; done'
 # alias nvim='lvim'
 
-# convert other document formats to pdf using lowriter
-alias x2pdf='lowriter --convert-to pdf $@' 
+# convert other document formats to pdf using libreoffice
+alias x2pdf='libreoffice --convert-to pdf $@' 
 
 # adb no permissions fix
 alias adbfix='~/scripts/adb_no_permission_fix.sh'
