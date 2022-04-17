@@ -197,6 +197,12 @@ main() {
 	echo "🤲 sudo access needed"
 	sudo -v
 
+	# Keep-alive: update existing sudo time stamp if set, otherwise do nothing.
+	while true; do
+		sudo -n true
+		sleep 60
+		kill -0 "$$" || exit
+	done 2>/dev/null &
 
 	install_core_pkgs
 
@@ -226,6 +232,7 @@ main() {
 	echo "changing shell to zsh.."
 	chsh -s "$(which zsh)"
 
+	echo "have a nice day 😃"
 }
 
 main "$@"
