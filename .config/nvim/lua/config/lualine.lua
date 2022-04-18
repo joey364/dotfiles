@@ -10,11 +10,12 @@ end
 local diagnostics = {
   "diagnostics",
   sources = { "nvim_diagnostic" },
+  symbols = { error = " ", warn = " ", info = " ", hint = " " },
   sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
   colored = false,
   update_in_insert = false,
   always_visible = true,
+  color = { fg = "auto", bg = "auto" },
 }
 
 local diff = {
@@ -27,7 +28,7 @@ local diff = {
 local mode = {
   "mode",
   fmt = function(str)
-    return "-- " .. str .. " --"
+    return "" .. string.sub(str, 1, 1) .. ""
   end,
 }
 
@@ -38,25 +39,27 @@ local branch = { "branch", icons_enabled = true, icon = "" }
 local location = { "location", padding = 0 }
 
 -- cool function for progress
-local progress = function()
-  local current_line = vim.fn.line "."
-  local total_lines = vim.fn.line "$"
-  local chars = {
-    "__",
-    "▁▁",
-    "▂▂",
-    "▃▃",
-    "▄▄",
-    "▅▅",
-    "▆▆",
-    "▇▇",
-    "██",
-  }
-  local line_ratio = current_line / total_lines
-  local index = math.ceil(line_ratio * #chars)
-  return chars[index]
-end
-
+local progress = {
+  function()
+    local current_line = vim.fn.line "."
+    local total_lines = vim.fn.line "$"
+    local chars = {
+      "__",
+      "▁▁",
+      "▂▂",
+      "▃▃",
+      "▄▄",
+      "▅▅",
+      "▆▆",
+      "▇▇",
+      "██",
+    }
+    local line_ratio = current_line / total_lines
+    local index = math.ceil(line_ratio * #chars)
+    return chars[index]
+  end,
+  color = { fg = "auto", bg = "auto" },
+}
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
