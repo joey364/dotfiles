@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#      _       _    __ _ _                      _
+#   __| | ___ | |_ / _(_) | ___  ___   ___  ___| |_ _   _ _ __
+#  / _` |/ _ \| __| |_| | |/ _ \/ __| / __|/ _ \ __| | | | '_ \
+# | (_| | (_) | |_|  _| | |  __/\__ \ \__ \  __/ |_| |_| | |_) |
+#  \__,_|\___/ \__|_| |_|_|\___||___/ |___/\___|\__|\__,_| .__/
+#                                                        |_|
+
+# Author : Joel Owusu-Ansah
 # Install some essential packages
 # rust nodejs(nvm yarn) git python-pip nvim  zsh(+oh-my-zsh) starship-prompt
 
