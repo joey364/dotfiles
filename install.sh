@@ -81,6 +81,15 @@ install_nvm() {
 	echo
 }
 
+install_node() {
+	echo "Installing node via nvm..."
+	if [[ $(command -v nvm) ]]; then
+		nvm install --lts
+		nvm use node
+	fi
+	echo
+}
+
 # Starship Prompt
 install_starship() {
 	echo "Installing Starship prompt..."
@@ -166,7 +175,7 @@ clone_dotfiles() {
 # function to mimick config alias
 
 config() {
-	/usr/bin/git --git-dir=$home/.dotfiles/ --work-tree=$home "$@"
+	/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME "$@"
 }
 
 # create a backup of existing config
@@ -228,9 +237,11 @@ main() {
 
 	install_starship
 
+	install_nvm
+
 	install_yarn
 
-	install_nvm
+	install_node
 
 	updating font cache
 	echo "updating font cache.."
