@@ -157,9 +157,7 @@ install_zsh_plugins() {
 	echo
 }
 
-#################################################################
-##### dotfiles setup                                        #####
-#################################################################
+# dotfiles setup
 
 # check git installation and pull dotfiles repo
 clone_dotfiles() {
@@ -188,9 +186,10 @@ checkout_config() {
 		echo "checked out config..."
 	else
 		# existing config found
-		mkdir -p .config-backup
 		echo "backing up pre-existing dot files."
-		config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -i{} mv {} .config-backup/{}
+		mkdir -p .config-backup
+		config checkout 2>&1 | grep -E "\s+\." | awk {'print $1'} |
+			xargs -I{} mv {} .config-backup/{}
 	fi
 
 	config checkout
@@ -244,7 +243,7 @@ main() {
 
 	install_node
 
-	updating font cache
+	# updating font cache
 	echo "updating font cache.."
 	fc-cache -f
 	echo "done"
