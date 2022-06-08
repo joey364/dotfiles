@@ -17,6 +17,7 @@ pkgs=(
 	"neovim"
 	"openssl" # dependency for tealdeer
 	"python"
+	"vnstat"
 	"zsh"
 )
 
