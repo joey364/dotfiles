@@ -10,6 +10,7 @@
 # Author : Joel Owusu-Ansah
 # Install some essential packages
 # rust nodejs(nvm yarn) git python-pip nvim  zsh(+oh-my-zsh) starship-prompt
+set -e
 
 pkgs=(
 	"git"
