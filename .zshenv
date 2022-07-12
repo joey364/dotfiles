@@ -38,3 +38,5 @@ export PATH="$PATH:$GOPATH/bin"
 # Flutter  
 # export PATH=$PATH:/opt/flutter/bin
 
+# java
+export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which javac)))))
