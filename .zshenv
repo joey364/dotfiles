@@ -1,4 +1,3 @@
-. "$HOME/.cargo/env"
 # XDG_BASE_DIRS
 export XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
@@ -33,7 +32,8 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 # export PATH=$PATH:/opt/firefox/firefox
 
 # Go  
-export PATH=$PATH:/usr/local/go/bin:~/go/bin/
+export GOPATH="${GOPATH:-"$XDG_DATA_HOME/go"}"
+export PATH="$PATH:$GOPATH/bin"
 
 # Flutter  
 # export PATH=$PATH:/opt/flutter/bin
