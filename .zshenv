@@ -16,8 +16,8 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export EDITOR='nvim'
 
 # nvm (node version manager) 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm nvm setup  
+export NVM_DIR="${NVM_DIR:-"$XDG_DATA_HOME/nvm"}"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm setup  
 
 # WebP 
 # export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
