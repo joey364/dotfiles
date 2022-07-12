@@ -116,12 +116,13 @@ if [ -f "/etc/fedora-release" ] || [ -f "/etc/redhat-release" ]; then
   alias rpminstall='sudo rpm -i $@'
   alias install='sudo dnf install $@ -y'
   alias reinstall='sudo dnf reinstall $@ -y'
-  alias check-upgrade='sudo dnf check-upgrade'
+  alias check-update='sudo dnf check-update'
   alias remove='sudo dnf remove $@ -y'
   alias update='sudo dnf upgrade'
   alias upgrade='sudo dnf upgrade -y'
   alias search='dnf search $@'
   alias info='dnf info $@'
+  alias provides='dnf provides $@'
 else
   alias debinstall='sudo dpkg -i $@'
   alias install='sudo apt-fast install $@ -y'
@@ -143,7 +144,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias uptime='uptime -p'
 alias snap='sudo snap'
 alias watch='sass $@ --watch -s compressed '
-alias cat='~/.cargo/bin/bat'
+alias cat='~/.local/share/cargo/bin/bat'
 alias logout='gnome-session-quit'
 alias yarn='yarn --emoji true'
 alias lg='lazygit'
@@ -158,6 +159,9 @@ alias adbfix='~/scripts/adb_no_permission_fix.sh'
 
 # remove lunarvim
 alias rm-lvim='~/scripts/rm-lvim.sh'
+
+# bun 
+alias bun='sde -chip-check-disable -- bun'
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
