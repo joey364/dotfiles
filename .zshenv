@@ -33,7 +33,9 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 
 # Go  
 export GOPATH="${GOPATH:-"$XDG_DATA_HOME/go"}"
-export PATH="$PATH:$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
+export GOROOT="${GOROOT:-"$HOME/goroot"}"
+export PATH="$PATH:$GOBIN:$GOROOT/bin"
 
 # Flutter  
 # export PATH=$PATH:/opt/flutter/bin
