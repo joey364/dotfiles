@@ -161,7 +161,7 @@ alias adbfix='~/scripts/adb_no_permission_fix.sh'
 alias rm-lvim='~/scripts/rm-lvim.sh'
 
 # bun 
-alias bun='sde -chip-check-disable -- bun'
+# alias bun='sde -chip-check-disable -- bun'
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
@@ -217,4 +217,9 @@ eval "$(starship init zsh)"
 
 export STARSHIP_CONFIG=~/.config/starship.toml 
 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Bun
+export BUN_INSTALL="/home/joel/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "/home/joel/.bun/_bun" ] && source "/home/joel/.bun/_bun"
