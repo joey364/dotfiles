@@ -10,12 +10,11 @@
   // Editor
   "editor.fontSize": 18,
   "editor.formatOnSave": true,
-  // "editor.fontFamily": "Rec Mono Duotone",
-  // "editor.fontFamily": "FiraCode NF",
+  "editor.fontFamily": "'FiraCode Nerd Font' ,'Source Code Pro'",
   "editor.fontLigatures": true,
   "editor.minimap.enabled": false,
   "editor.cursorBlinking": "expand",
-  "editor.inlayHints.enabled": true,
+  "editor.inlayHints.enabled": "on",
   "editor.bracketPairColorization.enabled": true,
   "editor.quickSuggestions": {
     "other": true,
@@ -77,7 +76,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "'Fira Code' ,'Source Code Pro'",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
@@ -114,12 +112,15 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Bearded Theme Vivid Black",
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "material-icon-theme.folders.color": "#bbb"
+  "material-icon-theme.folders.color": "#bbb",
+  "workbench.colorTheme": "GitHub Dark Default",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
