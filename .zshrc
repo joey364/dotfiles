@@ -167,6 +167,9 @@ alias rm-lvim='~/scripts/rm-lvim.sh'
 # bun 
 # alias bun='sde -chip-check-disable -- bun'
 
+# relaod shell
+alias ez='exec zsh'
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ ${KEYMAP} == vicmd ]] ||
