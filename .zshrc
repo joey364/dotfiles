@@ -71,6 +71,10 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 # following should be turned off, if sharing history via setopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY
+# do not save duplicate commands
+setopt HIST_SAVE_NO_DUPS  
+# remove unnecessary blanks
+setopt HIST_REDUCE_BLANKS 
 
 source $ZSH/oh-my-zsh.sh
 
