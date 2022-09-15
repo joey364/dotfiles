@@ -170,6 +170,9 @@ alias rm-lvim='~/scripts/rm-lvim.sh'
 # relaod shell
 alias ez='exec zsh'
 
+# sync dateime
+alias datesync='~/scripts/sync_datetime.sh'
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ ${KEYMAP} == vicmd ]] ||
