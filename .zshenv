@@ -18,9 +18,13 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # Preferred editor 
 export EDITOR='nvim'
 
-# nvm (node version manager) 
-export NVM_DIR="${NVM_DIR:-"$XDG_DATA_HOME/nvm"}"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm setup  
+# # nvm (node version manager) 
+# export NVM_DIR="${NVM_DIR:-"$XDG_DATA_HOME/nvm"}"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm setup  
+
+# Volta JavaScript Toolchain Manager
+export VOLTA_HOME="${VOLTA_HOME:-"$XDG_DATA_HOME/volta"}"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # WebP 
 # export PATH=$PATH:/opt/libwebp-1.2.0-linux-x86-64/bin
@@ -29,7 +33,7 @@ export NVM_DIR="${NVM_DIR:-"$XDG_DATA_HOME/nvm"}"
 # export PATH=$PATH:/usr/bin/clangd-9
 
 # Yarn 
-export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Firefox
 # export PATH=$PATH:/opt/firefox/firefox
@@ -38,7 +42,8 @@ export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
 export GOPATH="${GOPATH:-"$XDG_DATA_HOME/go"}"
 export GOBIN="$GOPATH/bin"
 export GOROOT="${GOROOT:-"$HOME/goroot"}"
-export PATH="$PATH:$GOBIN:$GOROOT/bin"
+export GOROOT_BOOTSTRAP="${GOROOT_BOOTSTRAP:-/usr/local/go}"
+export PATH="$GOBIN:$GOROOT/bin:$PATH"
 
 # Flutter  
 # export PATH=$PATH:/opt/flutter/bin
