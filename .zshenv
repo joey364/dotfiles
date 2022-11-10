@@ -50,3 +50,9 @@ export PATH="$GOBIN:$GOROOT/bin:$PATH"
 
 # java
 export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which javac)))))
+
+# android sdk
+export ANDROID_SDK_ROOT=/usr/lib/android-sdk
+export ANDROID_NDK="/usr/lib/android-sdk/ndk-bundle"
+PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$ANDROID_NDK
+
