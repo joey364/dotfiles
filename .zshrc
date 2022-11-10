@@ -173,6 +173,9 @@ alias ez='exec zsh'
 # sync dateime
 alias datesync='~/scripts/sync_datetime.sh'
 
+# display images in terminal with kitty 
+alias icat='kitty +kitten icat'
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ ${KEYMAP} == vicmd ]] ||
